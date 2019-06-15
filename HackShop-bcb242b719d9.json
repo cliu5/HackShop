@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hackshop-243819",
+  "private_key_id": "bcb242b719d93476efc7eeed49be18f602c85e7e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQClkvC5QqkswXKT\nqlk5/5L4K5PENBhoDhkzdLpNTjz2eHQ6tznwwX/vZ1sSo1cY8PvTPkmXAH/jz+5h\ntGA0gYozt0ElvpVxhIo4x9gQsO0zLD9d1EGGIylFqu0ID58YGAcYLeloB6ZnXzxv\nZnud6aoPndaFfjlECvwgjWCx/JewQCEgbTbXTaYHrSyYCsDAeQYksH16mroAzDWQ\n2c4hVE/AS7/WZsx68iwJEdNTLpOHdl9bgCeNHLQ2jDTN6EAY+KDuVXOpHqa//CGP\nVcWOUCuT5zxj84ryYRLYQDMIzsuaCPK5qWFGbvciiOFQJF6DV58T9p0LhRVPdF6R\nEyGZVJoPAgMBAAECggEALnEhWW2Tw0x9hWLWRTjlMfwTJgkQwXsW4YJ/0Tg9TErs\nGx4Sv++eoXmlp3wubX4GvLFvdc37kVxc+oXcKE4fhDMGMH6dL2qkVJnlhoUB+4UR\nPxHO0T+ij3qKouSy1NDEiKk0G2xt5ffmHT8rNFd6zoeQyP/nMyk7oCvXsATwTUyz\nPzo/+POOZkgc3Im2B8/xafOl9k2ampKNNULPtkW8O9MPCMErFZF8szoIbvJugB9o\nM+h3B61gf7Dm5xoYohZUbqgF1Pkn1q3jcMOF8io1bsG1spntB08boXlnw9RVLs4l\nSNxWHf6bzI5f+4EzPg2vvwQxgtZT0LFTlsXY3y7OAQKBgQDozYQ9AqInnuvFiGDl\n6cjRyLVpWrm0/AetkIjwrm2pF37IKnuiUFemppiYy5MEkeOEovxOPUCiMf9qI17+\nKlc/3QFDOemeyf9SlUHG0sC86hjP23Ua6ZiPfLamW7Ox883ZThodcEASIXbzVWU/\njeStt+3BGggbsPrql2TeAkqkDwKBgQC2EoILPiWvY+Ug5DgscHvPiNDK6ioUBZD4\n4+1HTSeN7OrB/QIxru4hd6/fh1aFA+CSjON7R5h/YUXHvA/6KRRcfjuqSFM7naSZ\nBHCUwEBUYL8+tFM+Ujb01bSF0HFE2MWRL6dtansoZCVtBhKz/Mg8tjqjZvOjjB4b\nSMv+oGiqAQKBgBn+yONfJegysLUP83H41vnF5avr+4ygD+Nrnj7x20DkZL3JMKEB\nQ6hSNfvpz3LVL4iiAnZiFJOH7bNWW8cZx0BUV03Aa7vVZnM8Q2oGIot1wGuFX+Av\ncV+kV2jgGIKobLX1KKlc3Wqo3fVx9apRF9XmEeBcHcepzXrgiNzZeKg1AoGAKgDF\nDXDt4rNp9ZeQuffNKEiI2ncA9BOAqVpzr+JFwMEqO0xyCCIx/3iME0Y2mIMXeNeV\n1yfiL2iyX2ysRurZLqlUfGkpAnTQtxhGHJrpfE3BcObK2XLACOWQOtqmdtqHYYIb\n3usUtHG+DJO9Fta3HwJvLqkehdlaTLMTlI9O9gECgYAWlkHj1tzWcqVs5LAtamyz\nsqsJCeSO/ivChjH1k481eht4AWpSkT3FFRoGrq1svOKqdqQpXwoipwK9BYGHwT/7\nDAKCzg53qJXEkU2PCXE857m2QVXL4S8cmAWTiETOBi/8rFAMm0JEjubGdIg3lvlr\nF1eR/qb0biu+Y4A4uuq13g==\n-----END PRIVATE KEY-----\n",
+  "client_email": "claire-liu@hackshop-243819.iam.gserviceaccount.com",
+  "client_id": "112899449654555602124",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/claire-liu%40hackshop-243819.iam.gserviceaccount.com"
+}
