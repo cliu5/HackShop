@@ -8,23 +8,22 @@ import io
 import os
 from google.cloud import vision
 from google.cloud.vision import types
+from os.path import join, dirname, realpath
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="HackShop-bcb242b719d9.json"
 
 app = Flask(__name__, template_folder='templates', static_url_path='')
 
-UPLOAD_FOLDER = '/users/claireliu/apple-pie-illuminate/static'
-UPLOAD_FOLDER2= '/users/claireliu/apple-pie-illuminate'
+UPLOAD_FOLDER = join(dirname(realpath(__file__)), './static')
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 app=Flask(__name__)
 app.config['UPLOAD_FOLDER']=UPLOAD_FOLDER
-app.config['UPLOAD_FOLDER2']=UPLOAD_FOLDER2
 client=vision.ImageAnnotatorClient()
 
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route("/", methods=['GET','POST'])      
+@app.route("/", methods=['GET','POST'])
 def home():
 
     if request.method == 'POST':
@@ -38,15 +37,13 @@ def home():
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
-        if file and allowed_file(file.filename):
+        if file:
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            file.save(os.path.join(app.config['UPLOAD_FOLDER2'],filename))
-            print(filename)
-            
+
             file_name=os.path.join(os.path.dirname(__file__),filename)
-            
-            with io.open(file_name,'rb') as image_file:
+            print(file_name)
+            with io.open("./static/" + file_name,'rb') as image_file:
                 content=image_file.read()
 
             image=types.Image(content=content)
@@ -58,7 +55,7 @@ def home():
             for label in labels:
                 print(label.description)
                     #test(filename)
-                    
+
             return render_template('index.html',imgURL=filename)
     return render_template('index.html')
 
@@ -66,7 +63,7 @@ def home():
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'],
                                filename)
-#@app.route("/test")      
+#@app.route("/test")
 def test(filename):
     file_name = os.path.join(
         os.path.dirname(__file__),
