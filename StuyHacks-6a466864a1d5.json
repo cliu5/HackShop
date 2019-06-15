@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "stuyhacks",
+  "private_key_id": "6a466864a1d5dc261c874ccae421158b8f071387",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC3Bj/miE8xvfh2\nz6CUOAOLgA68rIRt9BTdZsnJ0cHj77AkEeVH07Wl67w0xf8Eet1L7LCSLd7xiagT\nq1Ne7ovZwDgENZcrmoieh+Hlfxc0066NKfUUmvbrAx52BRMTX6SDtZ98rQebd/Y6\nOD8YE2w+HeKtKVvTc1A1QypdyNHwXE++vGnlG/xQwNSa7kQNcOLzAhKVOJROLf6M\nzLW7XryooJWzAwdj7TxtXcWDJJo2tr5GLYT0KapWh4UL1J/YY4NFQH2Upp1t/XQf\ncsHR4HYIfErbUB/i7O9IaP/5tcJDaOlLGiQFH65mqOs+4zzDLiH4wnfnHAeNcwdr\nMvd069pFAgMBAAECggEAHTrqSa8gtsOtmDa2C/Xw2v6rW9v8P8iTlyiAtwgWUd5I\ni0+FsWBRH8aeWu9O4zBG14ay9yWhotcRTig2kHAYoGuKhrboWxZlwKvYRVwey1kO\nBOLb5AaRGMd5aJqMNAk6WllPYgy1rPwOXw33RakUcyHivzUJF/l6qIb+5SuFcUAy\nT99XUUOCTvXImRLe7JSiv/2j2+h/th/ahxX0/++64j+je59lHOmsOfRuovQrSllU\ndkYM8bkl5AH6Gx7mX5c1NAaatfX9rsA93aaA1XY/9DBF+0J/Uvk83h54yNQPt7OS\nGefHkXRPxya4Sk6fMe5xRA9fclP78ermbXyf+J+ioQKBgQDnk74wEykX4J3zEY4p\n4zU47WrRCHFGRqPxZZtDOArbs8MsIiYKy/2p/viKNfQNPjVbpHhrjXkO9J1pjjzv\nMHba9YVTktM/o4t53CPJkAjkWiJeoZeZWCMZILkkJiSCK5Q+b2noWN6uKRfqEiv5\n8TSkBBfKSvKQF9ol+kikI4U4HwKBgQDKU6bY0Z5oEA+FRi0ZEdFd/TuWwiedopW1\n2HUMfZpQ1KX2kDSxjAechGy3wwtJPYdZgpmPyUnTN7fujslrKkyMYdXOUo3x/eRE\nBDI+Vw/avH/DorfPZI3V2DqdXCf3moW0HcdJNYS8x8+AdvdWomtsai7MnVE6ycNV\nEmXayb8xGwKBgQDILoLdc/K13UkscSR/ORUs3K7Ve4LPyQi3B6ordSqNuNsiL3LL\nKoNgjDO05ebN+9SMH6So9GaNcw8PzBEIgtB7fnl+QRGzlWBgOtgEySmmm/PR8cXm\nnLXaZtskUISGsb04K39Vhl0YGBXAFW1GZienEJKwIBGGVdgRtEVO/hWO6QKBgCiT\nRBehWio2ZlZs72hiqWE3ArdGMpmrXGi+gyLBIaxqKOpcmySsF26tI/xqUh4bB8TM\nqy0pyfNg7jMaUYx7TCSvDii1Z6ALMbbuPIFCBnzwZpL+U+x0lvk2xvJ948oFJCEu\nA6RL5lXRoGx77zhhlDeGx+Hi/sJSaijqaqDI6t3XAoGAHgiQG3ZECneanwdA0tjJ\nOmiTy/PrcIxvsz4q7Wdtk7m8qseqYbaNFZb+mGVyzrFDxPETyBq3JjNfG1S4Qmkl\nGpa3IITC166oSduyBV4cpNDHEQOHHIpDLc6zMq25yJ6LNBAEeeKZy9ZGsxEPgIAc\nZXICJUqGPTHUjtfwlyxpUvo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "claire-liu@stuyhacks.iam.gserviceaccount.com",
+  "client_id": "116959693917758452641",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/claire-liu%40stuyhacks.iam.gserviceaccount.com"
+}
