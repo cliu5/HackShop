@@ -22,8 +22,8 @@
 
     img{
       margin-left:40px;
-      height:20%;
-      width:20%;
+      height:19.5%;
+      width:19.5%;
     }
 
     </style>
@@ -57,8 +57,7 @@
     <br>
     <h1 style="margin-left:40px;"> <u style="color:#022B3A;"> Results </u> </h1>
     <br>
-<div class="container bg-light">
-      <table class="table table-bordered table-hover" width="50%">
+      <table style="margin-left:40px;" class="table table-bordered table-hover" width="50%">
         <thead class="thead-dark">
           <tr>
             <th scope="col"> Information </th>
@@ -68,6 +67,8 @@
           </tr>
           </thead>
           <tbody>
+            <!--
+
             <tr>
             <th scope="row">
               Title
@@ -76,7 +77,6 @@
               <td> {{each}} </td>
             {% endfor %}
             </tr>
-            <!--
             <tr class="table-primary">
               <th scope="row">
                   Description
@@ -89,13 +89,16 @@
                <tr class="table-secondary">
                  <th scope="row">URL</th>
                  {% for each in url %}
-                  <td> {{each}} </td>
+                  <td>  <a href="{{each}}">
+{{each}}                 </a>
+</td>
                 {% endfor %}
+              <br>
                </tr>
               </tbody>
                </table>
              </div>
            </div>
-
+<br>
   </body>
 </html>
