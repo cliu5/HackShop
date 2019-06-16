@@ -72,11 +72,11 @@ def home():
                 d = f.read()#Reads f and stores Json inside d
                 data = json.loads(d)
                 results=data['results']
-                images.append(results[0]['url_75x75'])
+                print(results[0])
+                images.append(results[0]['url_170x135'])
                 title.append(i['title'])
                 description.append(i['description'])
                 url.append(i['url'])
-            print(title,description,url)
             return render_template('index.html',imgURL=filename, title=title,
                                    description=description,url=url, images=images)
 
