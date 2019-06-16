@@ -1,11 +1,13 @@
 from flask import Flask, request, render_template, flash, redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
+import api as etsy
 import os
 import urllib.request
 import json
 import ssl
 import io
 import os
+import re
 from google.cloud import vision
 from google.cloud.vision import types
 from os.path import join, dirname, realpath
@@ -48,44 +50,36 @@ def home():
 
             image=types.Image(content=content)
             response=client.label_detection(image=image)
-            print(response)
             labels=response.label_annotations
+            query=''
+            for label in labels[0:3]:
+                query+=label.description
+                query+=','
+            query=query.replace(" ", ",")
+                
+            '''
+            BAR GRAPH
+            '''
+            temp=etsy.getResults(query)
+            queryResults=temp['results']
+            title=[]
+            description=[]
+            url=[]
+            for i in queryResults:
+                title.append(i['title'])
+                description.append(i['description'])
+                url.append(i['url'])
+            print(title,description,url)
+            return render_template('index.html',imgURL=filename, title=title,
+                                   description=description,url=url)
 
-            print('Labels:')
-            for label in labels:
-                print(label.description)
-                    #test(filename)
-
-            return render_template('index.html',imgURL=filename)
+        
     return render_template('index.html')
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'],
                                filename)
-#@app.route("/test")
-def test(filename):
-    file_name = os.path.join(
-        os.path.dirname(__file__),
-        'static/test.jpg')
-
-    # Loads the image into memory
-    with io.open(file_name, 'rb') as image_file:
-        content = image_file.read()
-
-    image = types.Image(content=content)
-
-    # Performs label detection on the image file
-    response = client.label_detection(image=image)
-    labels = response.label_annotations
-
-
-    print('Labels:')
-    for label in labels:
-        print(label.description)
-        print(label.score)
-
-    return render_template('index.html')
 
 
 if __name__ == "__main__":

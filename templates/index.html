@@ -38,9 +38,6 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
 
     <h1 style="margin-left:40px;"> <u style="color:#022B3A;"> Shop Instantly </u> </h1>
     <br>
@@ -58,5 +55,47 @@
     <br>
     <br>
     <br>
+    <h1 style="margin-left:40px;"> <u style="color:#022B3A;"> Results </u> </h1>
+    <br>
+<div class="container bg-light">
+      <table class="table table-bordered table-hover" width="50%">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col"> Information </th>
+            <th> First Listing </th>
+            <th> Second Listing </th>
+            <th> Third Listing </th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr>
+            <th scope="row">
+              Title
+            </th>
+            {% for each in title %}
+              <td> {{each}} </td>
+            {% endfor %}
+            </tr>
+            <!--
+            <tr class="table-primary">
+              <th scope="row">
+                  Description
+              </th>
+              {% for each in description %}
+                 <td> {{each}} </td>
+             {% endfor %}
+              </tr>
+            -->
+               <tr class="table-secondary">
+                 <th scope="row">URL</th>
+                 {% for each in url %}
+                  <td> {{each}} </td>
+                {% endfor %}
+               </tr>
+              </tbody>
+               </table>
+             </div>
+           </div>
+
   </body>
 </html>
