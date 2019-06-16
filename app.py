@@ -78,7 +78,7 @@ def home():
                 url.append(i['url'])
             print(title,description,url)
             return render_template('index.html',imgURL=filename, title=title,
-                                   description=description,url=url)
+                                   description=description,url=url, images=images)
 
 
     return render_template('index.html')
