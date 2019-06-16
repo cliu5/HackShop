@@ -11,6 +11,13 @@ def getResults(keywords ="shirt"):
     data = json.loads(d)
     results=data['results']
     return data
-#stuff=getResults('Natural,foods,Fruit,Product,')
-#print(stuff)
-#print(loop[0])
+
+temp = getResults('Natural,foods,Fruit,Product,')
+queryResults=temp['results']
+context = ssl._create_unverified_context()
+for i in queryResults:
+    f =  urllib.request.urlopen('https://openapi.etsy.com/v2/listings/' + str(i['listing_id'])+ '/images/?api_key=irz124oxaw6rq6n346nx99hk',context=context)
+    d = f.read()#Reads f and stores Json inside d
+    data = json.loads(d)
+    results=data['results']
+    print(results[0]['url_75x75'])

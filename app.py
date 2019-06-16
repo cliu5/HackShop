@@ -56,7 +56,7 @@ def home():
                 query+=label.description
                 query+=','
             query=query.replace(" ", ",")
-                
+
             '''
             BAR GRAPH
             '''
@@ -65,7 +65,14 @@ def home():
             title=[]
             description=[]
             url=[]
+            images = []
             for i in queryResults:
+                context = ssl._create_unverified_context()
+                f =  urllib.request.urlopen('https://openapi.etsy.com/v2/listings/' + str(i['listing_id'])+ '/images/?api_key=irz124oxaw6rq6n346nx99hk',context=context)
+                d = f.read()#Reads f and stores Json inside d
+                data = json.loads(d)
+                results=data['results']
+                images.append(results[0]['url_75x75'])
                 title.append(i['title'])
                 description.append(i['description'])
                 url.append(i['url'])
@@ -73,7 +80,7 @@ def home():
             return render_template('index.html',imgURL=filename, title=title,
                                    description=description,url=url)
 
-        
+
     return render_template('index.html')
 
 @app.route('/uploads/<filename>')
