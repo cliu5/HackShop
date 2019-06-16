@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, flash, redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
 import api as etsy
+import amazon as amazon
 import os
 import urllib.request
 import json
@@ -11,6 +12,11 @@ import re
 from google.cloud import vision
 from google.cloud.vision import types
 from os.path import join, dirname, realpath
+import jinja2
+jinja2.Environment().globals.update(zip=zip)
+
+
+
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="HackShop-bcb242b719d9.json"
 
 app = Flask(__name__, template_folder='templates', static_url_path='')
@@ -44,7 +50,7 @@ def home():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
             file_name=os.path.join(os.path.dirname(__file__),filename)
-            print(file_name)
+            (file_name)
             with io.open("./static/" + file_name,'rb') as image_file:
                 content=image_file.read()
 
@@ -52,16 +58,20 @@ def home():
             response=client.label_detection(image=image)
             labels=response.label_annotations
             query=''
+            scoreAry=[]
+            labelAry=[]
             for label in labels[0:3]:
+                labelAry.append(label.description)
+                scoreAry.append(label.score*100)
                 query+=label.description
                 query+=','
             query=query.replace(" ", ",")
+            #print(labelAry,scoreAry)
 
-            '''
-            BAR GRAPH
-            '''
+
             temp=etsy.getResults(query)
             queryResults=temp['results']
+            
             title=[]
             description=[]
             url=[]
@@ -72,13 +82,22 @@ def home():
                 d = f.read()#Reads f and stores Json inside d
                 data = json.loads(d)
                 results=data['results']
-                print(results[0])
                 images.append(results[0]['url_170x135'])
                 title.append(i['title'])
                 description.append(i['description'])
                 url.append(i['url'])
+
+            newQuery=labels[0].description
+            #print(newQuery)
+            tempAmazon=amazon.get_data(newQuery)
+            amazonImage=[]
+            for i in tempAmazon[0:3]:
+                #print(i)
+                amazonImage.append(i)
+            print(amazonImage)
+            
             return render_template('index.html',imgURL=filename, title=title,
-                                   description=description,url=url, images=images)
+                                   description=description,url=url, images=images,labelAry=labelAry,scoreAry=scoreAry,amazonImage=amazonImage)
 
 
     return render_template('index.html')

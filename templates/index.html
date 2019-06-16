@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" type=text/css href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <style>
-    p,h1,h2,h3,h4,h5,button {
+    p,h1,h2,h3,h4,h5,button,.progress {
       font-family:"Futura";
       color:white;
     }
+
 
     body{
       background-image:url("/static/background.png");
@@ -54,10 +56,22 @@
     <img src="static/{{imgURL}}" >
     <br>
     <br>
+
+      {% for i in range(labelAry|length) %}
+      <div class="progress" style="margin-left:40px;">
+      <div class="progress-bar progress-bar-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{scoreAry[i]}}%" aria-valuemin="0" aria-valuemax="100">
+        {{scoreAry[i]}}% {{labelAry[i]}}
+      </div>
+</div>
+<br>
+
+{% endfor %}
+
+
     <br>
     <h1 style="margin-left:40px;"> <u style="color:#022B3A;"> Results </u> </h1>
     <br>
-      <table style="margin-left:40px;" class="table table-bordered table-hover" width="50%">
+      <table style="margin-left:40px; color:black;" class="table table-bordered table-dark" width="50%">
         <thead class="thead-dark">
           <tr>
             <th scope="col"> Information </th>
@@ -67,46 +81,45 @@
           </tr>
           </thead>
           <tbody>
-            <!--
 
-            <tr>
-            <th scope="row">
-              Title
-            </th>
-            {% for each in title %}
-              <td> {{each}} </td>
-            {% endfor %}
-            </tr>
-            <tr class="table-primary">
-              <th scope="row">
-                  Description
-              </th>
-              {% for each in description %}
-                 <td> {{each}} </td>
-             {% endfor %}
-              </tr>
-            -->
+
                <tr class="table-secondary">
-                 <th scope="row">URL</th>
-                 {% for each in url %}
-                  <td>  <a href="{{each}}">
-{{each}}                 </a>
-</td>
-                {% endfor %}
-              <br>
-               </tr>
-               <tr class="table-secondary">
-                 <th scope="row">Listing Image</th>
-                 {% for each in images %}
-                  <td>  <img src="{{each}}" style="width:60%; height:250%;">
+                 <th scope="row">Etsy Image</th>
+                 {% for i in range(images|length) %}
+                  <td>  <a href="{{url[i]}}"> <img src="{{images[i]}}" style="width:80%; height:250%;">
+                  </a>
 </td>
                 {% endfor %}
               <br>
                </tr>
               </tbody>
                </table>
-             </div>
-           </div>
+
+
+
+               <table style="margin-left:40px; color:black;" class="table table-bordered table-dark" width="50%">
+                 <thead class="thead-dark">
+                   <tr>
+                     <th scope="col"> Information </th>
+                     <th> First Listing </th>
+                     <th> Second Listing </th>
+                     <th> Third Listing </th>
+                   </tr>
+                   </thead>
+                   <tbody>
+
+
+                        <tr class="table-secondary">
+                          <th scope="row">Amazon Image</th>
+                          {% for each in amazonImage %}
+                           <td>  <img src="{{each}}" style="width:80%; height:100%;">
+         </td>
+                         {% endfor %}
+                       <br>
+                        </tr>
+                       </tbody>
+                        </table>
+
 <br>
   </body>
 </html>
