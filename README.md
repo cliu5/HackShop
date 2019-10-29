@@ -1,2 +1,1 @@
-# apple-pie-illuminate
-StuyHacks VIII
+# Hackshop
